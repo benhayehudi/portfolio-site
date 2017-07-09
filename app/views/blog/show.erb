@@ -1,6 +1,6 @@
 <div class="col-md-6 col-md-offset-3">
 
-<img src="<%= @listing.image %>" width="140" float="left"><h2 id="blog-title"><%= @listing.title %></h2>
+<h2 id="blog-title"><%= @listing.title %></h2>
 <h3 id="signature"><%= @listing.author %></h3>
 <h4><a href="<%= @listing.original_link %>" target="_new">Visit Original Blog Post</a></h4>
 <a href="https://www.facebook.com/sharer/sharer.php?u=http://bengreenberg.herokuapp.com/blog/show/<%= @listing.id %>" target="_blank"><img src="/images/facebook-icon.png" width="60"></a>
@@ -8,7 +8,7 @@
 <br>
 <div class="col-md-12 blog-listing">
 
-<p id="blog-content"><%= @listing.content.gsub(/\n/, '<br/>') %></p>
+<p id="blog-content"><%= @listing.content.gsub(/\n/, '<br/>').gsub("<image>", '<img src="<%= @listing.image %>" width="180" float="left">') %></p>
 </div>
 
 </div> <!-- close col-md-6 col-md-offset-3 -->
