@@ -1,6 +1,6 @@
 <div class="col-md-6 col-md-offset-4">
 
-<div class="col-md-9 index-content">
+<div class="col-md-12 index-content">
 <h2 id="blog-title"><%= @item.name %></h2>
 <h4><%= @item.created_on %></h4>
 <br>
@@ -15,7 +15,7 @@
         <div class="col-md-6">
           <br>
           <p><%= @item.description.gsub(/\n/, '<br/>') %></p>
-          <img src="/images/more-icon.png" width="80"><a href="<%= @item.blog_link %>" target="_new">Read More About <%= @item.name %></a><br>
+          <img src="/images/more-icon.png" width="80"><a href="<%= @item.blog_link %>" target="_new">Read More</a><br>
           <img src="/images/github-icon.png" width="80"><a href="<%= @item.link %>" target="_new">View GitHub Repository</a>
         </div>
 
