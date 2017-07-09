@@ -2,7 +2,7 @@
 
 <% @items = Portfolio.all %>
 <% @items.each do |item| %>
-<div class="col-md-6 blog-listing">
+<div class="col-md-12 blog-listing">
   <img src="<% if item.image == nil || item.image == "" %>
     <%= "/images/default_item_img.png" %>
     <% else %>
