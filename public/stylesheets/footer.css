@@ -18,9 +18,9 @@ h1, h2, h3, h4, h5, p {
 }
 
 #title-heading {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 300%;
-  color: white;
+font-family: 'Abril Fatface', cursive;
+font-size: 300%;
+color: white;
 }
 
 #title-linetwo {
@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 #title-linethree {
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Open Sans Condensed', sans-serif;
   font-size: 600%;
   color: white;
   display: inline-block;
