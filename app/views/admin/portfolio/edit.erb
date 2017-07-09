@@ -1,0 +1,55 @@
+<h2 id="page-title">Edit <%= @item.name %></h2>
+
+<div class="input-group input-group-lg">
+  <form action="/admin/portfolio/edit/<%= @item.id %>" method="POST">
+
+  <div class="form-group form-group-lg">
+    <label name="name"><input type="text" class="form-control input-lg" value="<%= @item.name %>" name="name" aria-describedby="sizing-addon1" placeholder="Project Title"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="link"><input type="text" class="form-control input-lg" placeholder="GitHub Link" value="<%= @item.link %>" name="link" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="youtube_link"><input type="text" class="form-control input-lg" placeholder="YouTube Link" value="<%= @item.youtube_link %>" name="youtube_link" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="blog_link"><input type="text" class="form-control input-lg" placeholder="Blog Link" value="<%= @item.blog_link %>" name="blog_link" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+    <label name="image"><input type="text" class="form-control input-lg" placeholder="Image Link" value="<%= @item.image %>" name="image" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+    <label name="created_on"><input type="date" class="form-control input-lg" placeholder="Creation Date" value="<%= @item.created_on %>" name="created_on" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="description"><textarea name="description" class="form-control input-lg" rows=25 cols=75><%= @item.description %></textarea></label><br>
+  </div>
+
+  <div class="form-group">
+    <label name="show" color="white"><p id="form-label">Publish or Draft?</label><select name="show" class="form-control input-lg"><br>
+  <option value=1>Publish It</option>
+  <option value=0>Draft</option>
+  </select><br>
+  </div>
+
+  <div class="form-group">
+  <label name="submit"><input type="submit" value="Submit" class="btn btn-default"></label>
+  </div>
+
+  </form>
+  </div>
+
+  <div class="input-group input-group-lg">
+      <form method="post" action="/portfolio/delete/<%=@item.id%>">
+        <div class="form-group">
+          <input id="hidden" type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Delete" class="btn btn-default">
+        </div>
+      </form>
+      </div>

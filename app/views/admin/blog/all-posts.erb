@@ -1,0 +1,17 @@
+<h2 id="page-title">All Blog Posts</h2>
+
+<% @listings = Blog.all %>
+<% @listings.each do |listing| %>
+<div class="col-md-12 blog-listing">
+  <img src="<% if listing.image == nil || listing.image == "" %>
+    <%= "/images/default_listing_img.png" %>
+    <% else %>
+    <%= listing.image %>
+    <% end %>" class="img-thumbnail" alt="Blog Post Image" align="left" width="120">
+<strong><h4><a href="/admin/blog/edit/<%= listing.id %>"><%= listing.title %></a></h4></strong>
+<br><br>
+<strong>Tag:</strong> <%= listing.tags %><br>
+<strong>Published on:</strong> <%= listing.created_on %><br>
+<strong>Published?</strong> <%= listing.publish %><br>
+</div>
+<% end %>

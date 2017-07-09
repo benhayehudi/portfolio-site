@@ -1,0 +1,17 @@
+<div class="col-md-6 col-md-offset-3">
+
+<h2 id="page-title">Blog Posts on Jewish Topics</h2>
+
+<% @listings = Blog.where(publish: [true], tags: ["Jewish"]) %> %>
+<% @listings.each do |listing| %>
+<div class="col-md-2 blog-listing">
+<strong><h4><a href="/blog/show/<%= listing.id %>"><%= listing.title %></a></h4></strong>
+<strong><%= listing.tags %> Post</strong><br>
+<strong>Published:</strong> <%= listing.created_on %><br>
+<h4><a href="/blog/show/<%= listing.id %>">Read the Article</a></h4>
+</div>
+<% end %>
+
+
+
+</div> <!-- close col-md-6 col-md-offset-3 -->

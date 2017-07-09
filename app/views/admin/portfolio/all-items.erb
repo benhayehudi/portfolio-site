@@ -1,0 +1,15 @@
+<h2 id="page-title">All Portfolio Projects</h2>
+
+<% @items = Portfolio.all %>
+<% @items.each do |item| %>
+<div class="col-md-6 blog-listing">
+  <img src="<% if item.image == nil || item.image == "" %>
+    <%= "/images/default_item_img.png" %>
+    <% else %>
+    <%= item.image %>
+    <% end %>" class="img-thumbnail" alt="Portfolio Image" align="left" width="120">
+<strong><h4><a href="/admin/portfolio/edit/<%= item.id %>"><%= item.name %></a></h4></strong>
+<br><br>
+<strong>Published?</strong> <%= item.show %><br>
+</div>
+<% end %>

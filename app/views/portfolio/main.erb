@@ -1,0 +1,19 @@
+<div class="col-md-6 col-md-offset-3">
+
+<h2 id="page-title">Portfolio Projects</h2>
+
+<% @items = Portfolio.where(show: [true]) %> %>
+<% @items.each do |item| %>
+<div class="col-md-6 blog-listing">
+  <img src="<% if item.image == nil || item.image == "" %>
+    <%= "/images/default_item_img.png" %>
+    <% else %>
+    <%= item.image %>
+    <% end %>" class="img-thumbnail" alt="Portfolio Image" align="left" width="100%" height="100%">
+<strong><h4><a href="/portfolio/show/<%= item.id %>"><%= item.name %></a></h4></strong>
+</div>
+<% end %>
+
+
+
+</div> <!-- close col-md-6 col-md-offset-3 -->

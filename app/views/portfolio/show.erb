@@ -1,0 +1,36 @@
+<div class="col-md-6 col-md-offset-4">
+
+<div class="col-md-9 index-content">
+<h2 id="blog-title"><%= @item.name %></h2>
+<h4><%= @item.created_on %></h4>
+<br>
+</div></div>
+
+
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+
+    <div class="content">
+      <div class="row">
+        <div class="col-md-6">
+          <br>
+          <p><%= @item.description.gsub(/\n/, '<br/>') %></p>
+          <img src="/images/more-icon.png" width="120"><a href="<%= @item.blog_link %>" target="_new">Read More About <%= @item.name %></a><br>
+          <img src="/images/github-icon.png" width="120"><a href="<%= @item.link %>" target="_new">View GitHub Repository</a>
+        </div>
+
+        <div class="row">
+          <iframe width="453" height="380" src="https://www.youtube.com/embed/<%= @item.youtube_link.gsub("https://www.youtube.com/watch?v=", '') %>?showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="col-md-6 col-md-offset-4">
+
+  <div class="col-md-9 index-content">
+
+<a href="https://www.facebook.com/sharer/sharer.php?u=/portfolio/show/<%= @item.id %>" target="_blank"><img src="/images/facebook-icon.png" width="60"></a> <a href="https://twitter.com/home?status=Check%20out%20this%20portfolio%20project%20http%3A/portfolio/show/<%= @item.id %>" target="_blank"><img src="/images/twitter-icon.png" width="60"></a>
+
+  </div></div>

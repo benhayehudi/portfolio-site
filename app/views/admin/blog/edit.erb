@@ -1,0 +1,48 @@
+<h2 id="page-title">Update Blog Post</h2>
+
+<div class="input-group input-group-lg">
+  <form action="/admin/blog/edit/<%= @blog.id %>" method="POST">
+
+  <div class="form-group form-group-lg">
+    <label name="title"><input type="text" class="form-control input-lg" value="<%= @blog.title %>" name="title" aria-describedby="sizing-addon1" placeholder="Blog Title"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="author"><input type="text" class="form-control input-lg" value="<%= @blog.author %>" placeholder="Blog Author" name="author" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="image"><input type="text" class="form-control input-lg" value="<%= @blog.image %>" placeholder="Image Link" name="image" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+    <label name="original_link"><input type="text" class="form-control input-lg" placeholder="Link to original location" name="original_link" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="content"><textarea name="content" class="form-control input-lg" rows=50 cols=150><% if @blog.content == nil || @blog.content == "" %><%= "Blog Content" %><% else %><%= @blog.content %><% end %></textarea></label><br>
+  </div>
+
+  <div class="form-group">
+    <label name="publish" color="white"><p id="form-label">Publish or Draft?</label><select name="publish" class="form-control input-lg"><br>
+  <option value="<%= @blog.publish %>"><%= @blog.publish %></option>
+  <option value="true">Publish It</option>
+  <option value="false">Draft</option>
+  </select><br>
+  </div>
+
+  <div class="form-group">
+  <label name="submit"><input type="submit" value="Submit" class="btn btn-default"></label>
+  </div>
+
+  </form>
+  </div>
+
+  <div class="input-group input-group-lg">
+      <form method="post" action="/blog/delete/<%=@blog.id%>">
+        <div class="form-group">
+          <input id="hidden" type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Delete" class="btn btn-default">
+        </div>
+      </form>
+      </div>

@@ -1,0 +1,46 @@
+<h2 id="page-title">Add Portfolio Project</h2>
+
+<div class="input-group input-group-lg">
+  <form action="/admin/portfolio/add-new-listing" method="POST">
+
+  <div class="form-group form-group-lg">
+    <label name="name"><input type="text" class="form-control input-lg" name="name" aria-describedby="sizing-addon1" placeholder="Project Title"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="link"><input type="text" class="form-control input-lg" placeholder="GitHub Link" name="link" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="youtube_link"><input type="text" class="form-control input-lg" placeholder="YouTube Link" name="youtube_link" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="blog_link"><input type="text" class="form-control input-lg" placeholder="Blog Link" name="blog_link" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+    <label name="image"><input type="text" class="form-control input-lg" placeholder="Image Link" name="image" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+    <label name="created_on"><input type="date" class="form-control input-lg" placeholder="Creation Date" name="created_on" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="description"><textarea name="description" class="form-control input-lg" rows=25 cols=75>Content</textarea></label><br>
+  </div>
+
+  <div class="form-group">
+    <label name="show" color="white"><p id="form-label">Publish or Draft?</label><select name="show" class="form-control input-lg"><br>
+  <option value=1>Publish It</option>
+  <option value=0>Draft</option>
+  </select><br>
+  </div>
+
+  <div class="form-group">
+  <label name="submit"><input type="submit" value="Submit" class="btn btn-default"></label>
+  </div>
+
+  </form>
+  </div>

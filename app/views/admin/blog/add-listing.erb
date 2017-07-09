@@ -1,0 +1,45 @@
+<h2 id="page-title">Add Blog Post</h2>
+
+<div class="input-group input-group-lg">
+  <form action="/admin/blog/add-new-listing" method="POST">
+
+  <div class="form-group form-group-lg">
+    <label name="title"><input type="text" class="form-control input-lg" name="title" aria-describedby="sizing-addon1" placeholder="Blog Title"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="author"><input type="text" class="form-control input-lg" value="Ben Greenberg" placeholder="Blog Author" name="author" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="image"><input type="text" class="form-control input-lg" placeholder="Image Link" name="image" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="tags"><p id"form-label">Jewish or Tech Post?</label><select name="tags" class="form-control input-lg">
+    <option value="Tech">Tech</option>
+    <option value="Jewish">Jewish</option><br></select>
+  </div>
+  <br><br>
+
+  <div class="form-group">
+    <label name="original_link"><input type="text" class="form-control input-lg" placeholder="Link to original location" name="original_link" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="content"><textarea name="content" class="form-control input-lg" rows=50 cols=150>Content</textarea></label><br>
+  </div>
+
+  <div class="form-group">
+    <label name="publish" color="white"><p id="form-label">Publish or Draft?</label><select name="publish" class="form-control input-lg"><br>
+  <option value=1>Publish It</option>
+  <option value=0>Draft</option>
+  </select><br>
+  </div>
+
+  <div class="form-group">
+  <label name="submit"><input type="submit" value="Submit" class="btn btn-default"></label>
+  </div>
+
+  </form>
+  </div>
