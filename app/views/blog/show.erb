@@ -7,6 +7,7 @@
 <a href="https://twitter.com/home?status=Check%20out%20this%20blog%20post%20http://bengreenberg.herokuapp.com/blog/show/<%= @listing.id %>" target="_blank"><img src="/images/twitter-icon.png" width="60"></a>
 <br>
 <div class="col-md-12 blog-listing">
+<img src="<%= @listing.image %>" width="80" float="left">
 <p id="blog-content"><%= @listing.content.gsub(/\n/, '<br/>') %></p>
 </div>
 
