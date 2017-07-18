@@ -120,7 +120,7 @@ post '/admin/portfolio/add-new-listing' do
   if logged_in?
     @admin = current_user
     if @admin.id == 1
-      @item = Portfolio.new(name: params["name"], link: params["link"], youtube_link: params["youtube_link"], blog_link: params["blog_link"], description: params["description"], image: params["image"], created_on: params["created_on"], show: params["show"])
+      @item = Portfolio.new(name: params["name"], link: params["link"], youtube_link: params["youtube_link"], website_link: params["website_link"], blog_link: params["blog_link"], description: params["description"], image: params["image"], created_on: params["created_on"], show: params["show"])
       @item.save
       redirect '/admin/portfolio/all-items'
       erb :'/admin/portfolio/add-listing'
@@ -158,7 +158,7 @@ post '/admin/portfolio/edit/:id' do
     @admin = current_user
     if @admin.id == 1
     item = Portfolio.find_by_id(params[:id])
-    item.update_attributes(name: params["name"], link: params["link"], youtube_link: params["youtube_link"], blog_link: params["blog_link"], description: params["description"], image: params["image"], created_on: params["created_on"], show: params["show"])
+    item.update_attributes(name: params["name"], link: params["link"], youtube_link: params["youtube_link"], website_link: params["website_link"], blog_link: params["blog_link"], description: params["description"], image: params["image"], created_on: params["created_on"], show: params["show"])
     item.save
     redirect '/admin/portfolio/all-items'
     erb :'/admin/portfolio/edit'
