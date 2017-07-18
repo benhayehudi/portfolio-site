@@ -20,7 +20,7 @@
             <%= @item.description.gsub(/\n/, '<br/>') %>
           </p>
 
-          <% if @item.blog_link != "http://bengreenberg.org/portfolio/show/<%= @item.id %>" %>
+          <% !blog_link? %>
             <img src="/images/more-icon.png" width="80">
               <a href="<%= @item.blog_link %>" target="_new">Read More</a>
             <br>
@@ -28,14 +28,14 @@
             <img src="/images/more-icon.png" width="80">No Blog Posting
           <% end %>
 
-          <% if @item.link != "http://bengreenberg.org/portfolio/show/<%= @item.id %>" %>
+          <% !github_link? %>
             <img src="/images/github-icon.png" width="80">
               <a href="<%= @item.link %>" target="_new">View GitHub Repository</a>
           <% else %>
             <img src="/images/github-icon.png" width="80">No GitHub Repository
           <% end %>
 
-          <% if @item.website_link != "http://bengreenberg.org/portfolio/show/<%= @item.id %>" %>
+          <% !website_link? %>
             <img src="/images/weblink-icon.png" width="80">
               <a href="<%= @item.website_link %>" target="_new">View Website</a>
           <% else %>
@@ -45,11 +45,13 @@
         </div>
 
         <div class="row">
-          <% if @item.youtube_link != "http://bengreenberg.org/portfolio/show/<%= @item.id %>" %>
+
+          <% !youtube_link? %>
             <iframe width="253" height="220" src="https://www.youtube.com/embed/<%= @item.youtube_link.gsub("https://www.youtube.com/watch?v=", '') %>?showinfo=0" frameborder="0" allowfullscreen></iframe>
           <% else %>
             <img src="<%= @item.image %>" width="253">
           <% end %>
+          
         </div>
 
       </div>
