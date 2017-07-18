@@ -45,7 +45,7 @@
         </div>
 
         <div class="row">
-          <% if @item.youtube_link != "" || @item.youtube_link != nil %>
+          <% if @item.youtube_link != "http://bengreenberg.org/portfolio/show/<%= @item.id %>" %>
             <iframe width="253" height="220" src="https://www.youtube.com/embed/<%= @item.youtube_link.gsub("https://www.youtube.com/watch?v=", '') %>?showinfo=0" frameborder="0" allowfullscreen></iframe>
           <% else %>
             <img src="<%= @item.image %>" width="253">
@@ -59,8 +59,7 @@
 
   <div class="col-md-6 col-md-offset-4">
     <div class="col-md-9 index-content">
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://bengreenberg.herokuapp.com/portfolio/show/<%= @item.id %>"
-          target="_blank">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://bengreenberg.herokuapp.com/portfolio/show/<%= @item.id %>" target="_blank">
             <img src="/images/facebook-icon.png" width="60">
       </a>
       <a href="https://twitter.com/home?status=Check%20out%20this%20portfolio%20project%20http://bengreenberg.herokuapp.com/portfolio/show/<%= @item.id %>" target="_blank">
