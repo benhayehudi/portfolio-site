@@ -15,13 +15,13 @@
         <div class="col-md-6">
           <br><br>
           <p><%= @item.description.gsub(/\n/, '<br/>') %></p>
-          <% if @item.blog_link %>
+          <% if @item.blog_link != "" || @item.blog_link != nil %>
           <%= <img src="/images/more-icon.png" width="80"><a href="<%= @item.blog_link %>" target="_new">Read More</a><br> %>
           <% end %>
-          <% if @item.link %>
+          <% if @item.link != "" || @item.link != nil %>
           <%=  <img src="/images/github-icon.png" width="80"><a href="<%= @item.link %>" target="_new">View GitHub Repository</a> %>
           <% end %>
-          <% if @item.website_link %>
+          <% if @item.website_link != "" || @item.website_link != nil %>
           <%=  <img src="/images/weblink-icon.png" width="80"><a href="<%= @item.website_link %>" target="_new">View Website</a> %>
           <% end %>
         </div>
