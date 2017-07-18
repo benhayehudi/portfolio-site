@@ -48,7 +48,7 @@
           <% if @item.youtube_link != "" || @item.youtube_link != nil %>
             <iframe width="253" height="220" src="https://www.youtube.com/embed/<%= @item.youtube_link.gsub("https://www.youtube.com/watch?v=", '') %>?showinfo=0" frameborder="0" allowfullscreen></iframe>
           <% else %>
-            <img src="<%= @item.image" width="253">
+            <img src="<%= @item.image %>" width="253">
           <% end %>
         </div>
 
