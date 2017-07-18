@@ -13,37 +13,59 @@
     <div class="content">
       <div class="row">
         <div class="col-md-6">
+
           <br><br>
-          <p><%= @item.description.gsub(/\n/, '<br/>') %></p>
+
+          <p>
+            <%= @item.description.gsub(/\n/, '<br/>') %>
+          </p>
+
           <% if @item.blog_link != "" || @item.blog_link != nil %>
-          <img src="/images/more-icon.png" width="80"><a href="<%= @item.blog_link %>" target="_new">Read More</a><br>
+            <img src="/images/more-icon.png" width="80">
+              <a href="<%= @item.blog_link %>" target="_new">Read More</a>
+            <br>
           <% else %>
-          <img src="/images/more-icon.png" width="80">No Blog Posting
+            <img src="/images/more-icon.png" width="80">No Blog Posting
           <% end %>
+
           <% if @item.link != "" || @item.link != nil %>
-          <img src="/images/github-icon.png" width="80"><a href="<%= @item.link %>" target="_new">View GitHub Repository</a>
-            <% else %>
+            <img src="/images/github-icon.png" width="80">
+              <a href="<%= @item.link %>" target="_new">View GitHub Repository</a>
+          <% else %>
             <img src="/images/github-icon.png" width="80">No GitHub Repository
           <% end %>
+
           <% if @item.website_link != "" || @item.website_link != nil %>
-          <img src="/images/weblink-icon.png" width="80"><a href="<%= @item.website_link %>" target="_new">View Website</a>
+            <img src="/images/weblink-icon.png" width="80">
+              <a href="<%= @item.website_link %>" target="_new">View Website</a>
           <% else %>
-          <img src="/images/weblink-icon.png" width="80">No Website Link
+            <img src="/images/weblink-icon.png" width="80">No Website Link
           <% end %>
+
         </div>
 
         <div class="row">
-          <iframe width="253" height="220" src="https://www.youtube.com/embed/<%= @item.youtube_link.gsub("https://www.youtube.com/watch?v=", '') %>?showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <% if @item.youtube_link != "" || @item.youtube_link != nil %>
+            <iframe width="253" height="220" src="https://www.youtube.com/embed/<%= @item.youtube_link.gsub("https://www.youtube.com/watch?v=", '') %>?showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <% else %>
+            <img src="<%= @item.image" width="253">
+          <% end %>
         </div>
+
       </div>
     </div>
   </div>
   </div>
 
   <div class="col-md-6 col-md-offset-4">
+    <div class="col-md-9 index-content">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://bengreenberg.herokuapp.com/portfolio/show/<%= @item.id %>"
+          target="_blank">
+            <img src="/images/facebook-icon.png" width="60">
+      </a>
+      <a href="https://twitter.com/home?status=Check%20out%20this%20portfolio%20project%20http://bengreenberg.herokuapp.com/portfolio/show/<%= @item.id %>" target="_blank">
+        <img src="/images/twitter-icon.png" width="60">
+      </a>
 
-  <div class="col-md-9 index-content">
-
-<a href="https://www.facebook.com/sharer/sharer.php?u=http://bengreenberg.herokuapp.com/portfolio/show/<%= @item.id %>" target="_blank"><img src="/images/facebook-icon.png" width="60"></a> <a href="https://twitter.com/home?status=Check%20out%20this%20portfolio%20project%20http://bengreenberg.herokuapp.com/portfolio/show/<%= @item.id %>" target="_blank"><img src="/images/twitter-icon.png" width="60"></a>
-
-  </div></div>
+  </div>
+</div>
