@@ -25,7 +25,8 @@
               <a href="<%= @item.blog_link %>" target="_new">Read More</a>
             <br>
           <% else %>
-            <img src="/images/more-icon.png" width="80">No Blog Posting
+            <img src="/images/more-icon.png" width="80">No Blog
+            <br>
           <% end %>
 
           <% if !github_link? %>
@@ -33,6 +34,7 @@
               <a href="<%= @item.link %>" target="_new">View GitHub Repository</a>
           <% else %>
             <img src="/images/github-icon.png" width="80">No GitHub Repository
+            <br>
           <% end %>
 
           <% if !website_link? %>
@@ -40,6 +42,7 @@
               <a href="<%= @item.website_link %>" target="_new">View Website</a>
           <% else %>
             <img src="/images/weblink-icon.png" width="80">No Website Link
+            <br>
           <% end %>
 
         </div>
@@ -49,7 +52,7 @@
           <% if !youtube_link? %>
             <iframe width="253" height="220" src="https://www.youtube.com/embed/<%= @item.youtube_link.gsub("https://www.youtube.com/watch?v=", '') %>?showinfo=0" frameborder="0" allowfullscreen></iframe>
           <% else %>
-            <img src="<%= @item.image %>" width="253">
+            <img src="<%= @item.image %>" width="253" height=220>
           <% end %>
 
         </div>
