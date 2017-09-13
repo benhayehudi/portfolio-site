@@ -18,12 +18,14 @@ class PortfolioController < ApplicationController
 
   # API Service
   get '/api/portfolio/index.json' do
+    headers 'Access-Control-Allow-Origin' => 'http://www.bengreenberg.org'
     @items = Portfolio.where(show: [true])
     content_type :json
     @items.to_json
   end
 
   get '/api/portfolio/show/:id' do
+    headers 'Access-Control-Allow-Origin' => 'http://www.bengreenberg.org'
     @item = Portfolio.find_by_id(params[:id])
     content_type :json 
     @item.to_json
