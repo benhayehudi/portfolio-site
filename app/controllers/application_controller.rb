@@ -1,18 +1,21 @@
 require './config/environment'
+require 'sinatra'
+require 'sinatra/cross_origin'
 
 class ApplicationController < Sinatra::Base
-  configure do #open do
+  configure do 
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "bitachon"
-  end #close do
+    enable :cross_origin
+  end 
 
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
   end
-
+  
   get '/' do
     erb :index
   end
