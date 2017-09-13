@@ -11,6 +11,7 @@ gem 'pry'
 gem 'bcrypt'
 gem "tux"
 gem "json"
+gem 'sinatra-cross_origin'
 
 group :test do
   gem 'rspec'

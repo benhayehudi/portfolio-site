@@ -1,5 +1,11 @@
 class BlogController < ApplicationController
   require 'json'
+  require 'sinatra'
+  require 'sinatra/cross_origin'
+
+  configure do
+    enable :cross_origin
+  end
 
   # Sinatra Frontend
   get '/blog/all-postings' do
