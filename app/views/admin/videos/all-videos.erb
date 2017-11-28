@@ -1,6 +1,6 @@
 <h2 id="page-title">All Videos</h2>
 
-<% @videos = Video.all %>
+<% @videos = Videos.all %>
 <% @videos.each do |video| %>
   <div class="col-md-12 blog-listing">
     <img src="<% if video.image == nil || video.image == "" %>
