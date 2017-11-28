@@ -12,3 +12,4 @@ use Rack::MethodOverride
 use BlogController
 use PortfolioController
 use AdminController
+use VideosController
