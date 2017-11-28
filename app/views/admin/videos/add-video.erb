@@ -1,0 +1,35 @@
+<h2 id="page-title">Add Video</h2>
+
+<div class="input-group input-group-lg">
+  <form action="/admin/videos/add-new-video" method="POST">
+
+  <div class="form-group form-group-lg">
+    <label name="title"><input type="text" class="form-control input-lg" name="title" aria-describedby="sizing-addon1" placeholder="Video Title"></label><br>
+  </div>
+
+  <div class="form-group">
+  <label name="image"><input type="text" class="form-control input-lg" placeholder="Image Link" name="image" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group form-group-lg">
+    <label name="tags"><input type="text" class="form-control input-lg" name="tags" aria-describedby="sizing-addon1" placeholder="Video Tags, comma separated"></label><br>
+  </div>
+  <br><br>
+
+  <div class="form-group">
+    <label name="url"><input type="text" class="form-control input-lg" placeholder="Link to location" name="url" aria-describedby="sizing-addon1"></label><br>
+  </div>
+
+  <div class="form-group">
+    <label name="publish" color="white"><p id="form-label">Publish or Draft?</label><select name="publish" class="form-control input-lg"><br>
+  <option value=1>Publish It</option>
+  <option value=0>Draft</option>
+  </select><br>
+  </div>
+
+  <div class="form-group">
+  <label name="submit"><input type="submit" value="Submit" class="btn btn-default"></label>
+  </div>
+
+  </form>
+  </div>

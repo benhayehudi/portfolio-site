@@ -1,0 +1,17 @@
+<h2 id="page-title">All Videos</h2>
+
+<% @videos = Video.all %>
+<% @videos.each do |video| %>
+  <div class="col-md-12 blog-listing">
+    <img src="<% if video.image == nil || video.image == "" %>
+      <%= "/images/default_listing_img.png" %>
+      <% else %>
+      <%= video.image %>
+      <% end %>" class="img-thumbnail" alt="Video Image" align="left" width="120">
+    <strong><h4><a href="/admin/videos/edit/<%= video.id %>"><%= video.title %></a></h4></strong>
+    <br><br>
+    <strong>Tags:</strong> <%= video.tags %><br>
+    <strong>Published on:</strong> <%= listing.created_on %><br>
+    <strong>Published?</strong> <%= listing.publish %><br>
+  </div>
+<% end %>

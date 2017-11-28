@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
 
+# ADMIN AUTHENTICATION
 
 get '/admin/createadmin' do
   erb :'/admin/createadmin'
@@ -24,8 +25,8 @@ post '/login' do
     redirect '/admin/main'
   else
     redirect '/'
-  end #close if
-end #close do
+  end
+end 
 
 get '/admin/main' do
   if logged_in?
@@ -37,6 +38,8 @@ get '/admin/main' do
     end
   end
 end
+
+# BLOG ADMINISTRATION
 
 get '/admin/blog/add-listing' do
   if logged_in?
@@ -112,6 +115,8 @@ delete '/blog/delete/:id' do
     end
   end
 
+# PORTFOLIO ADMINISTRATION
+
 get '/admin/portfolio/add-listing' do
   erb :'/admin/portfolio/add-listing'
 end
@@ -181,4 +186,79 @@ delete '/portfolio/delete/:id' do
     end
   end
 
+  # VIDEOS ADMINISTRATION
+
+  get '/admin/videos/add-video' do
+    if logged_in?
+      @admin = current_user
+      if @admin.id == 1
+        erb :'/admin/videos/add-video'
+      else
+        redirect to '/'
+      end
+    end
+  end
+
+  post '/admin/videos/add-new-video' do
+    if logged_in?
+      @admin = current_user
+      if @admin.id == 1
+        @video = Video.new(title: params["title"], image: params["image"], tags: params["tags"], url: params["url"], publish: params["publish"])
+        @video.save
+        redirect '/admin/videos/all-videos'
+      else
+        redirect to '/'
+      end
+    end
+  end
+
+  get '/admin/videos/all-videos' do
+    if logged_in?
+      @admin = current_user
+      if @admin.id == 1
+      erb :'/admin/videos/all-videos'
+    else
+      redirect to '/'
+      end
+    end
+  end
+
+  get '/admin/videos/edit/:id' do
+    if logged_in?
+      @admin = current_user
+      if @admin.id == 1
+      @video = Video.find_by_id(params[:id])
+      erb :'/admin/videos/edit'
+    else
+      redirect to '/'
+      end
+    end
+  end
+
+  post '/admin/videos/edit/:id' do
+    if logged_in?
+      @admin = current_user
+      if @admin.id == 1
+        @video = Video.find_by_id(params[:id])
+        @video.update_attributes(title: params["title"], image: params["image"], tags: params["tags"], url: params["url"], publish: params["publish"])
+        @video.save
+        redirect to '/admin/video/all-videos'
+      else
+        redirect to '/'
+        end
+      end
+    end
+
+  delete '/videos/delete/:id' do
+    if logged_in?
+      @admin = current_user
+      if @admin.id == 1
+      @video = Video.find_by_id(params[:id])
+      @video.delete
+      redirect to '/admin/videos/all-videos'
+    else
+      redirect to '/'
+    end
+  end
+end
 end

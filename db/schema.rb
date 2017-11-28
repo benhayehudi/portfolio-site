@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718171305) do
+ActiveRecord::Schema.define(version: 20170718171306) do
 
   create_table "admin", force: :cascade do |t|
     t.string "username"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 20170718171305) do
     t.string  "youtube_link"
     t.string  "blog_link"
     t.string  "website_link"
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string  "title"
+    t.string  "url"
+    t.string  "image"
+    t.string  "tags"
+    t.date    "created_on"
+    t.boolean "publish"
   end
 
 end
