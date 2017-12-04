@@ -7,14 +7,15 @@ class PortfolioController < ApplicationController
   end
 
   # Sinatra Frontend
-  get '/portfolio/main' do
-    erb :'/portfolio/main'
-  end
-
-  get '/portfolio/show/:id' do
-    @item = Portfolio.find_by_id(params[:id])
-    erb :'/portfolio/show'
-  end
+  # Commenting out frontend client since only using API service
+  # get '/portfolio/main' do
+  #   erb :'/portfolio/main'
+  # end
+  #
+  # get '/portfolio/show/:id' do
+  #   @item = Portfolio.find_by_id(params[:id])
+  #   erb :'/portfolio/show'
+  # end
 
   # API Service
   get '/api/portfolio/index.json' do
@@ -27,7 +28,7 @@ class PortfolioController < ApplicationController
   get '/api/portfolio/show/:id' do
     headers 'Access-Control-Allow-Origin' => 'http://www.bengreenberg.org'
     @item = Portfolio.find_by_id(params[:id])
-    content_type :json 
+    content_type :json
     @item.to_json
   end
 
@@ -47,5 +48,5 @@ class PortfolioController < ApplicationController
   def github_link?
     @item.link == "http://bengreenberg.org/portfolio/show/#{@item.id}" || @item.link == "" || @item.link == nil
   end
-  
+
 end

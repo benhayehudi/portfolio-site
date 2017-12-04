@@ -3,7 +3,7 @@ require 'sinatra'
 require 'sinatra/cross_origin'
 
 class ApplicationController < Sinatra::Base
-  configure do 
+  configure do
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
     set :allow_credentials, true
     set :max_age, "1728000"
     set :expose_headers, ['Content-Type']
-  end 
+  end
 
   configure do
     set :public_folder, 'public'
@@ -37,12 +37,12 @@ class ApplicationController < Sinatra::Base
   end
 
 
-  def current_user #open def
+  def current_user
       Admin.find(session[:user_id])
-    end #close def
+    end
 
-  def logged_in? #ope def
+  def logged_in?
     !!session[:user_id]
-  end #end def
+  end 
 
 end
