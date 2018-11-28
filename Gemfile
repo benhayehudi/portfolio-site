@@ -12,6 +12,7 @@ gem 'bcrypt'
 gem "tux"
 gem "json"
 gem 'sinatra-cross_origin'
+gem "rack", ">= 2.0.6"
 
 group :test do
   gem 'rspec'
